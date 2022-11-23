@@ -3,3 +3,8 @@
 
 //components
 @import "./App.scss";
+@import "./components/Header/Header.scss", "./components/Header/Cart/Cart.scss";
+
+body {
+    font-family: $ff-Sans;
+}

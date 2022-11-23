@@ -1,0 +1,33 @@
+.cart {
+    position: absolute;
+    left: 0;
+    top: 50px; //45px for header height + 5 gap on image
+    height: 200px;
+    width: 100%;
+    background-color: $clr-white;
+    border-radius: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    
+    & > *:not(hr) {
+        padding: 20px
+    }
+}
+
+.cart__header {
+
+}
+
+.cart__hr {
+    border: 1px solid $clr-lightGrayish-blue;
+}
+
+.cart__container {
+    display: grid;
+    place-items: center;
+    height: calc(200px - 61px - 2px);
+}
+
+.cart__emptyText {
+    
+}
+
