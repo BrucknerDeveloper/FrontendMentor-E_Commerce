@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useEffect, useContext} from "react"
 import {Link} from "react-router-dom"
 
 import Cart from "./Cart/Cart"
+import {CartContext} from "../../context/CartContext"
 
 //images
 import LogoImg from "../../assets/logo.svg"
@@ -13,6 +14,8 @@ import CrossImg from "../../assets/icon-close.svg"
 export default function Header() {
     const [showCart, setShowCart] = useState(false)
     const [showMenu, setShowMenu] = useState(false)
+
+    const {cartItems} = useContext(CartContext)
 
     React.useEffect(() => {
         function handleResize() {
@@ -32,7 +35,7 @@ export default function Header() {
     return (
         <header className="header">
             <img onClick={toggleShowMenu} className="header__menu" src={MenuImg} />
-            <img className="header__logo" src={LogoImg}/> 
+            <Link className="header__logo" to="/" ><img className="header__logo" src={LogoImg}/></Link>
             {
                 showMenu &&   
                 <div className="header__container-nav">
@@ -94,7 +97,7 @@ export default function Header() {
                     onClick={() => setShowCart(prev => !prev)} 
                     className="header__cart" src={CartImg}
                 />
-                <p className="header__cart-hover text-white bold">3</p>
+                <p className="header__cart-hover text-white bold">{cartItems.length}</p>
                 {showCart && <Cart />}
                 <img className="header__avatar" src={AvatarImg}/>
             </div>

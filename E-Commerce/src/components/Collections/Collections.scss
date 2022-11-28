@@ -2,8 +2,13 @@
     .Collections {
         display: flex;
         gap: 5vw;
+        justify-content: center;
+        padding-inline: 6vw;
     }
 }
-.Collections {
-    
+
+@media (min-width: $mq-laptop) {
+    .Collections {
+        padding-inline: 17vw;
+    }
 }

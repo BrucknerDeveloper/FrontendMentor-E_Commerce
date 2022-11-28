@@ -24,7 +24,7 @@
     width: 100vw;
     height: 100vh;
     top: 0px;
-    background-color:transparentize($color: $clr-black, $amount: .3) ;
+    background-color:transparentize($color: $clr-black, $amount: .2) ;
 }
 
 .header__nav {
@@ -72,6 +72,7 @@
     right: 38px;
     padding: 0px 6px;
     border-radius: 9px;
+    pointer-events: none
 }
 
 .header__avatar {
