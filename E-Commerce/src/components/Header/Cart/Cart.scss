@@ -1,7 +1,8 @@
 .cart {
     position: absolute;
+    z-index: 99;
     left: 0;
-    top: 50px; //45px for header height + 5 gap on image
+    top: 60px; //50px for header height + 10 gap on image
     height: 200px;
     width: 100%;
     background-color: $clr-white;

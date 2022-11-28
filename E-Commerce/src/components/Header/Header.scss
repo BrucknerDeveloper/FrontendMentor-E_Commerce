@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px 30px;
+    margin: 20px 30px 25px;
     border: none;
     position: relative; //for cart component
 }
@@ -18,18 +18,23 @@
     cursor: pointer;
 }
 
-.header__nav {
-    box-sizing: content-box;
+.header__container-nav {
+    position: absolute;
+    z-index: 100;
+    width: 100vw;
     height: 100vh;
-    width: calc(40vw - 40px);
+    top: -20px;
+    background-color:transparentize($color: $clr-black, $amount: .3) ;
+}
+
+.header__nav {
+    height: 100vh;
+    width: 60vw;
     display: flex;
     margin-right: auto;
     gap: 20px;
-    position: absolute;
     flex-direction: column;
-    left: -30px; // subtract margin
-    top: -20px; // subtract margin
-    background-color: red;
+    background-color: $clr-white;
     padding: 20px;
     
 
@@ -41,8 +46,6 @@
     & .header__nav-item {
         cursor: pointer;
     }
-
-    
 }
 
 .header__container {
@@ -81,18 +84,49 @@
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: $mq-tablet) {
     .header__menu {    
         display: none;
     }
 
     .header__logo {
-        margin-right: 65px;
+        margin-right: 20px;
     }
 
     .header__nav {
+        height: initial;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
+        flex-direction: row;
+        gap: 2vw;
+        width: initial;
+    }
+
+    .header__container-nav {
+        display: flex;
+        position: static;
+        width: 100%;
+        height: initial;
+        background-color: $clr-white;
+
+        .header__close{
+            display: none;
+        }
+    
+        & .header__nav-item {
+            cursor: pointer;
+            color: $clr-darkGrayish-blue;
+            position: relative;
+
+            &:hover::after  {
+                content: "";
+                position: absolute;
+                width: 100%;
+                left: 0;
+                bottom: -55px;
+                border-bottom: 3px solid $clr-orange;
+            }
+        }
     }
 
     .header__avatar {
@@ -105,5 +139,11 @@
         gap: 25px;
         padding-bottom: 35px;
         border-bottom: 1px solid $clr-lightGrayish-blue;
+    }
+}
+
+@media (max-width: $mq-laptop) {
+    .header {
+        margin-inline: 5%;
     }
 }

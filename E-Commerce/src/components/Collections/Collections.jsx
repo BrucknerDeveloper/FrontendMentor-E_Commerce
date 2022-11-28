@@ -1,13 +1,13 @@
 import React from "react"
 
-import Image from "./Image/Image"
+import Thumbnail from "./Thumbnail/Thumbnail"
 import Description from "./Description/Description"
 
 export default function Collections() {
     
     return (
         <div>
-            <Image />
+            <Thumbnail />
             <Description />      
         </div>
     )

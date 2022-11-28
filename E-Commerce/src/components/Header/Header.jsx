@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
 
 import Cart from "./Cart/Cart"
@@ -13,26 +13,80 @@ import CrossImg from "../../assets/icon-close.svg"
 export default function Header() {
     const [showCart, setShowCart] = useState(false)
     const [showMenu, setShowMenu] = useState(false)
+    const [isItemHovered, setIsItemHovered] = useState(false)
+
+    React.useEffect(() => {
+        function handleResize() {
+            window.innerWidth > 768 && setShowMenu(true)     
+        }
+        window.addEventListener('resize', handleResize)
+      })
 
     function toggleShowMenu() {
         setShowMenu(prev => !prev)
     }
 
-    console.log(window.innerWidth)
+    function hoverStyles(e) {
+    }
+
     return (
         <header className="header">
             <img onClick={toggleShowMenu} className="header__menu" src={MenuImg} />
             <img className="header__logo" src={LogoImg}/> 
             {
-                window.innerWidth < 600 && showMenu &&   
-                <nav className="header__nav">
-                    <img onClick={toggleShowMenu} className="header__close" src={CrossImg}/>
-                    <Link onClick={toggleShowMenu} className="header__nav-item text-dark bold" to="/">Collections</Link>
-                    <Link onClick={toggleShowMenu} className="header__nav-item text-dark bold" to="/men">Men</Link>
-                    <Link onClick={toggleShowMenu} className="header__nav-item text-dark bold" to="/women">Women</Link>
-                    <Link onClick={toggleShowMenu} className="header__nav-item text-dark bold" to="/about">About</Link>
-                    <Link onClick={toggleShowMenu} className="header__nav-item text-dark bold" to="/contact">Contact</Link>
-                </nav>
+                showMenu &&   
+                <div className="header__container-nav">
+                    <nav className="header__nav">
+                        <img 
+                            onClick={toggleShowMenu} 
+                            className="header__close" src={CrossImg}
+                        />
+                        <Link 
+                            onClick={toggleShowMenu} 
+                            onMouseEnter={hoverStyles} 
+                            onMouseLeave={hoverStyles} 
+                            className="header__nav-item text-dark bold" to="/"
+                        >
+                            Collections
+                        </Link>
+
+                        <Link 
+                            onClick={toggleShowMenu} 
+                            onMouseEnter={hoverStyles} 
+                            onMouseLeave={hoverStyles} 
+                            className="header__nav-item text-dark bold" to="/men"
+                        >
+                            Men
+                        </Link>
+                        
+                        <Link 
+                            onClick={toggleShowMenu} 
+                            onMouseEnter={hoverStyles} 
+                            onMouseLeave={hoverStyles} 
+                            className="header__nav-item text-dark bold" to="/women"
+                        >
+                            Women
+                        </Link>
+
+                        <Link 
+                            onClick={toggleShowMenu} 
+                            onMouseEnter={hoverStyles} 
+                            onMouseLeave={hoverStyles} 
+                            className="header__nav-item text-dark bold" to="/about"
+                        >
+                            About
+                        </Link>
+
+                        <Link 
+                            onClick={toggleShowMenu} 
+                            onMouseEnter={hoverStyles} 
+                            onMouseLeave={hoverStyles} 
+                            className="header__nav-item text-dark bold" to="/contact"
+                        >
+                            Contact
+                        </Link>
+                    </nav>
+                </div>
             }
           
             <div className="header__container">

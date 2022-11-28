@@ -4,6 +4,8 @@
 //components
 @import "./App.scss";
 @import "./components/Header/Header.scss", "./components/Header/Cart/Cart.scss";
+@import "./components/Collections/Thumbnail/Thumbnail.scss", 
+"./components/Collections/Description/Description.scss";
 
 body {
     font-family: $ff-Sans;

@@ -1,0 +1,29 @@
+.thumbnail {
+    position: relative;
+}
+
+.thumbnail__icon {
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    height: 20px;
+    width: 20px;
+    background-color: $clr-white;
+    padding: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon--next {
+    right: 15px;
+}
+
+.thumbnail__product {
+    width: 100%;
+}
+
+.icon--previous {
+    left: 15px;
+}
