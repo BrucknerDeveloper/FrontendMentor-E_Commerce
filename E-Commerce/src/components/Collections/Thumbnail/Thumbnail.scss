@@ -1,4 +1,7 @@
 .thumbnail {
+}
+
+.thumbnail__container-image {
     position: relative;
 }
 
@@ -27,3 +30,30 @@
 .icon--previous {
     left: 15px;
 }
+
+.thumbnail__container-preview {
+    display: flex;
+    justify-content: space-between;
+
+    & .thumbnail__preview {
+        border-radius: 15px;
+        width: 100px;
+        cursor: pointer;
+
+        &:hover {
+            opacity: .5;
+        }
+    }
+}
+
+@media (min-width: $mq-tablet) {
+    .thumbnail {
+        width: 500px;
+    }
+    
+    .thumbnail__product {
+        border-radius: 15px;
+        margin-bottom: 20px;
+    }
+}
+

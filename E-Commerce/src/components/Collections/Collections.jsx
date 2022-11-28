@@ -6,7 +6,7 @@ import Description from "./Description/Description"
 export default function Collections() {
     
     return (
-        <div>
+        <div className="Collections">
             <Thumbnail />
             <Description />      
         </div>

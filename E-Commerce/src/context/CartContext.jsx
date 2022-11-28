@@ -9,8 +9,13 @@ function CartContextProvider({children}) {
         setCartItems(prev => [...prev, newItem])
     }
 
+    function removeCartItem(oldIndex) {
+        console.log("removing...")
+        setCartItems(prev => prev.filter((item, i) => i !== oldIndex))
+    }
+
     return (
-        <CartContext.Provider value={{cartItems, addCartItem}}>
+        <CartContext.Provider value={{cartItems, addCartItem, removeCartItem}}>
             {children}
         </CartContext.Provider>
     )

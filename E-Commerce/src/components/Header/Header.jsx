@@ -13,17 +13,17 @@ import CrossImg from "../../assets/icon-close.svg"
 export default function Header() {
     const [showCart, setShowCart] = useState(false)
     const [showMenu, setShowMenu] = useState(false)
-    const [isItemHovered, setIsItemHovered] = useState(false)
 
     React.useEffect(() => {
         function handleResize() {
-            window.innerWidth > 768 && setShowMenu(true)     
+            window.innerWidth >= 768 ? setShowMenu(true) : setShowMenu(false)
         }
         window.addEventListener('resize', handleResize)
-      })
+        handleResize()
+    }, [])
 
     function toggleShowMenu() {
-        setShowMenu(prev => !prev)
+        window.innerWidth < 768 && setShowMenu(prev => !prev)
     }
 
     function hoverStyles(e) {

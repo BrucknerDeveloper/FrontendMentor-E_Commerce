@@ -13,7 +13,7 @@ import Contact from  "../Contact/Contact"
 export default function Product() {
 
     return (
-        <div>
+        <div className="product">
             <Routes>
                 <Route exact path="/" element={<Collections />} />
                 <Route exact path="/men" element={<Men />} />

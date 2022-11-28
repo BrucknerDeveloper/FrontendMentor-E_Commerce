@@ -1,0 +1,36 @@
+.cartItem {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template: 25px 25px / 50px 1fr 20px;
+    grid-template-areas: 
+        "img name icon"
+        "img price icon";
+    column-gap: 20px;
+    margin-bottom: 25px;
+}
+
+.cartItem__img {
+    grid-area: img;
+    width: 50px;
+    border-radius: 5px;
+}
+
+.cartItem__name {
+    grid-area: name;
+
+}
+
+.cartItem__price {
+    grid-area: price;
+}
+
+.cartItem__total {
+    padding-left: 10px;
+}
+
+.cartItem__delete {
+    grid-area: icon;
+    cursor: pointer;
+    justify-self: flex-end;
+}

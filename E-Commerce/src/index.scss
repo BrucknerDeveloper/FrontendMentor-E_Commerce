@@ -1,11 +1,17 @@
 //utilities
 @import "./utility/variables", "./utility/resets", "./utility/components";
 
-//components
+// --- COMPONENTS ---
 @import "./App.scss";
-@import "./components/Header/Header.scss", "./components/Header/Cart/Cart.scss";
-@import "./components/Collections/Thumbnail/Thumbnail.scss", 
-"./components/Collections/Description/Description.scss";
+//header
+@import "./components/Header/Header.scss", 
+    "./components/Header/Cart/Cart.scss", 
+    "./components/Header/Cart/CartItem/CartItem.scss";
+//main
+@import "./components/Product/Product.scss", 
+    "./components/Collections/Collections.scss",
+    "./components/Collections/Thumbnail/Thumbnail.scss", 
+    "./components/Collections/Description/Description.scss";      
 
 body {
     font-family: $ff-Sans;
