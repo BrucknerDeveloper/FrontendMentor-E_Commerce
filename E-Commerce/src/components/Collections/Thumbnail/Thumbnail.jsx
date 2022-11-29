@@ -60,12 +60,21 @@ export default function Thumbnail() {
                 {!isDesktop && <div onClick={setNextImage} className="thumbnail__icon icon--next"><img src={iconNext} /></div>}
             </div>
 
-            {showZoomed && 
+            {showZoomed && isDesktop && 
                 <div className="thumbnail__container-image thumbnail__container-image--zoom">
-                    <img onClick={() => setShowZoomed(false)} className="thumbnail__icon-close" src={iconClose} />
-                    {<div onClick={setPrevImage} className="thumbnail__icon icon--previous"><img src={iconPrevious} /></div>}
-                    <img onClick={zoomImage} className="thumbnail__product" src={products[productIndex]} />
-                    {<div onClick={setNextImage} className="thumbnail__icon icon--next"><img src={iconNext} /></div>}
+                    <div className="thumbnail__sub-container">
+                        <img onClick={() => setShowZoomed(false)} className="thumbnail__icon-close" src={iconClose} />
+                        {<div onClick={setPrevImage} className="thumbnail__icon icon--previous"><img src={iconPrevious} /></div>}
+                        <img onClick={zoomImage} className="thumbnail__product" src={products[productIndex]} />
+                        {<div onClick={setNextImage} className="thumbnail__icon icon--next"><img src={iconNext} /></div>}
+
+                        <div className="thumbnail__container-preview">
+                            <img onClick={() => setProductIndex(0)} className="thumbnail__preview" src={preview1} />
+                            <img onClick={() => setProductIndex(1)} className="thumbnail__preview" src={preview2} />
+                            <img onClick={() => setProductIndex(2)} className="thumbnail__preview" src={preview3} />
+                            <img onClick={() => setProductIndex(3)} className="thumbnail__preview" src={preview4} />
+                        </div>
+                    </div>
                 </div>
             }
 
