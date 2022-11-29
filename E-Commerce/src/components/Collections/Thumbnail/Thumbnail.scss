@@ -58,12 +58,16 @@
     }
 
     & .thumbnail__icon-close {
-        filter: invert(69%) sepia(98%) saturate(3575%) hue-rotate(346deg) brightness(100%) contrast(101%);
+        filter: brightness(1000%) saturate(100%);
         width: 20px;
         right: 0;
         top: -40px;
         position: absolute;
         cursor: pointer;
+
+        &:hover {
+            filter: invert(69%) sepia(98%) saturate(3575%) hue-rotate(346deg) brightness(100%) contrast(101%);
+        }
     }
     
     & .icon--previous {
@@ -81,7 +85,9 @@
     }
 
     & .thumbnail__container-preview {
-        width: 100%;
+        margin: auto;
+        justify-content: center;
+        width: 90%;
         cursor: pointer;
     }
 }
@@ -94,6 +100,7 @@
     & .thumbnail__preview {
         border-radius: 15px;
         min-width: 75px;
+        max-width: 100px;
         width: 100%;
         cursor: pointer;
 

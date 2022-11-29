@@ -79,4 +79,8 @@
         filter: brightness(1000%) saturate(100%);
         width: 20px;
     }
+
+    &:hover {
+        opacity: .75;
+    }
 }
