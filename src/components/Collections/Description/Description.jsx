@@ -47,15 +47,17 @@ export default function Description() {
                 <h3 className="description__disount text-accent bold">50%</h3>
                 <h3 className="description__old-price text-light bold">$250.00</h3>
             </div>
-            <div className="description__btn-amount">
-                <img onClick={decreaseAmount} className="description__minus" src={iconMinus} />
-                <p className="description__amount text-dark bold">{product.amount}</p>
-                <img onClick={increaseAmount} className="description__plus" src={iconPlus} />
+            <div className="description__container-btn">
+                <div className="description__btn-amount">
+                    <img onClick={decreaseAmount} className="description__minus" src={iconMinus} />
+                    <p className="description__amount text-dark bold">{product.amount}</p>
+                    <img onClick={increaseAmount} className="description__plus" src={iconPlus} />
+                </div>
+                <button onClick={addToCart} className="description__btn-addCart text-white bold">
+                    <img className="description__cart" src={CartImg}/>
+                    Add to Cart
+                </button>
             </div>
-            <button onClick={addToCart} className="description__btn-addCart text-white bold">
-                <img className="description__cart" src={CartImg}/>
-                Add to Cart
-            </button>
         </div>
     )
 }
