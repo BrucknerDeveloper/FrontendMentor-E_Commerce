@@ -6,7 +6,7 @@
     margin-left: -175px;
     top: 60px; //50px for header height + 10 gap on image
     min-height: 200px;
-    width: 100%;
+    width: 100vw;
     background-color: $clr-white;
     border-radius: 15px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -54,7 +54,7 @@
 @media (min-width: $mq-tablet) {
     .cart {
         left: initial;
-        right: 3vw;
+        right: 4vw;
         top: 70px; 
     }    
 }

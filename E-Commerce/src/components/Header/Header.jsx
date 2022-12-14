@@ -97,7 +97,7 @@ export default function Header() {
                     onClick={() => setShowCart(prev => !prev)} 
                     className="header__cart" src={CartImg}
                 />
-                <p className="header__cart-hover text-white bold">{cartItems.length}</p>
+                {cartItems.length > 0 && <p className="header__cart-hover text-white bold">{cartItems.length}</p>}
                 {showCart && <Cart />}
                 <img className="header__avatar" src={AvatarImg}/>
             </div>

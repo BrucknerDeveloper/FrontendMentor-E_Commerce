@@ -57,14 +57,10 @@
     width: 20px;
     margin-right: 20px;
     cursor: pointer;
-
-    &:hover + .header__cart-hover {
-        display: block;
-    }
 }
 
 .header__cart-hover {
-    display: none;
+    display: block;
     position: absolute;
     background-color: $clr-orange;
     font-size: 10px;
@@ -143,7 +139,7 @@
     }    
 
     .header__cart-hover {
-        display: none;
+        display: block;
         position: absolute;
         background-color: $clr-orange;
         font-size: 10px;

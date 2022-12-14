@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 102;
+    z-index: 98;
 }
 
 .icon--next {
@@ -96,6 +96,10 @@
     .thumbnail {
         max-width: 500px;
         width: 100%;
+    }
+
+    .thumbnail__icon {
+        z-index: 102;
     }
     
     .thumbnail__product {
