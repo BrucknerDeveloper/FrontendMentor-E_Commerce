@@ -33,6 +33,12 @@
     left: 15px;
 }
 
+.thumbnail__sub-container {
+    position: relative;
+    max-width: 30vw;
+    min-width: 400px;
+}
+
 .thumbnail__container-image--zoom {
     width: 100vw;
     height: 100vh;
@@ -41,36 +47,48 @@
     z-index: 101;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .thumbnail__icon {
+        position: absolute;
+        top: 50%;
+        margin-top: -70px;
+    }
 
     & .thumbnail__icon-close {
-        filter: invert(69%) sepia(98%) saturate(3575%) hue-rotate(346deg) brightness(100%) contrast(101%);
+        filter: brightness(1000%) saturate(100%);
         width: 20px;
+        right: 0;
+        top: -40px;
         position: absolute;
-        right: 50%;
-        top: 50%;
-        margin-top: calc(-17.5vw - 40px);
-        margin-right: -17.5vw;
         cursor: pointer;
+
+        &:hover {
+            filter: invert(69%) sepia(98%) saturate(3575%) hue-rotate(346deg) brightness(100%) contrast(101%);
+        }
     }
     
     & .icon--previous {
-        left: 50%;
-        margin-left: calc(-17.5vw - 20px); //- width of image - width of button
+        left: 0;
+        margin-left: -20px; //- width of image - width of button
     }
 
     & .icon--next {
-        right: 50%;
-        margin-right: calc(-17.5vw - 20px);
+        right: 0;
+        margin-right: -20px;
     }
 
 
     & .thumbnail__product {
-        position: absolute;
-        width:35vw;
-        top: 50%;
-        left: 50%;
-        margin-top: -17.5vw;
-        margin-left: -17.5vw;
+    }
+
+    & .thumbnail__container-preview {
+        margin: auto;
+        justify-content: center;
+        width: 90%;
+        cursor: pointer;
     }
 }
 
@@ -82,6 +100,7 @@
     & .thumbnail__preview {
         border-radius: 15px;
         min-width: 75px;
+        max-width: 100px;
         width: 100%;
         cursor: pointer;
 

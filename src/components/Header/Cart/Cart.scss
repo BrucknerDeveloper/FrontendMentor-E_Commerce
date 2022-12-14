@@ -49,6 +49,10 @@
     color: $clr-white;
     margin-bottom: 10px;
     cursor: pointer;
+
+    &:hover {
+        opacity: .75;
+    }
 }
 
 @media (min-width: $mq-tablet) {

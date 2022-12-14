@@ -1,6 +1,6 @@
 .description {
     padding: 30px;
-    max-width: 500px;
+    max-width: 600px;
     margin: auto;
 }
 
@@ -46,6 +46,7 @@
 }
 
 .description__btn-amount {
+    min-width: 175px;
     height: 50px;
     background-color: $clr-lightGrayish-blue;
     display: flex;
@@ -78,5 +79,29 @@
     & .description__cart {
         filter: brightness(1000%) saturate(100%);
         width: 20px;
+    }
+
+    &:hover {
+        opacity: .75;
+    }
+}
+
+@media (min-width: $mq-laptop) {
+    .description__header {
+        font-size: 40px;
+    }
+    
+    .description__container-price {
+        width: 100%;
+        display: grid;
+        grid-template: 20px 20px / 90px 1fr;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .description__container-btn {
+        display: flex;
+        gap: 25px;
     }
 }

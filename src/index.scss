@@ -13,6 +13,11 @@
     "./components/Collections/Thumbnail/Thumbnail.scss", 
     "./components/Collections/Description/Description.scss";      
 
+@import "./components/Men/Men.scss",
+    "./components//Women/Women.scss",
+    "./components/Contact/Contact.scss",
+    "./components/About/About.scss";
+
 body {
     font-family: $ff-Sans;
 }
